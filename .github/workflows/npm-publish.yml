@@ -35,4 +35,4 @@ jobs:
       - run: git config --local core.hooksPath .git/hooks
       - run: yarn publish:lerna
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
