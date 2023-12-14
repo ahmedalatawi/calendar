@@ -1,6 +1,6 @@
 {
   "name": "@calendar/components",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "description": "A set of calendar components",
   "main": "index.js",
   "author": "Ahmed Alatawi",
