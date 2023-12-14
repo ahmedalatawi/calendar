@@ -18,7 +18,7 @@
     "lint": "yarn workspaces foreach -pRv run lint",
     "lint:since": "yarn workspaces foreach --since -pRv run lint",
     "build": "yarn workspaces foreach -ptv run build",
-    "publish:lerna": "lerna publish --yes",
+    "publish:lerna": "lerna publish --yes --no-push",
     "publish:lerna:skip-git": "lerna publish --yes --no-git-tag-version --no-push --loglevel=silly",
     "coverage": "yarn test --coverage",
     "coverage:all": "yarn workspaces foreach -pvA run test --coverage --silent",
