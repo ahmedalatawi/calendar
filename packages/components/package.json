@@ -87,5 +87,6 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "gitHead": "1664e666d86e4b7f524b433855460b41b59568ee"
 }
