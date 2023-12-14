@@ -16,7 +16,7 @@ const Page = () => {
       />
 
       <section className="storybook-page">
-        <h2>Pages in Storybook version 7 ...v6 ... 8</h2>
+        <h2>Pages in Storybook version 7 ...v6 ... 8 .... </h2>
         <p>
           We recommend building UIs with a{' '}
           <a
