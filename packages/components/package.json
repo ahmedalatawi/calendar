@@ -3,12 +3,33 @@
   "version": "1.0.3",
   "description": "A set of calendar components",
   "main": "index.js",
-  "repository": "https://github.com/ahmedalatawi/calendar.git",
   "author": "Ahmed Alatawi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmedalatawi/calendar.git",
+    "directory": "packages/components"
+  },
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js",
+    "default": "./dist/esm/index.js"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "datepicker",
+    "calendar",
+    "components",
+    "timepicker",
+    "daterange"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
