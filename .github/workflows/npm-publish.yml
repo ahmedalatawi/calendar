@@ -23,11 +23,6 @@ jobs:
       - run: yarn test:since
       - run: yarn build
 
-      - uses: actions/checkout@v2
-        with:
-          submodules: recursive
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       # Publish to NPM
       - uses: actions/setup-node@v3
         with:
