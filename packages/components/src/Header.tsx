@@ -29,7 +29,7 @@ const Header = ({ user, onLogin, onLogout, onCreateAccount }: any) => (
             />
           </g>
         </svg>
-        <h1>Acme v2 ... </h1>
+        <h1>Acme</h1>
       </div>
       <div>
         {user ? (
