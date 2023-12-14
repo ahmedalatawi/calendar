@@ -29,8 +29,8 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: |
-          git config --local user.name 'ahmedalatawi'
-          git config --local user.email 'aalat001@gmail.com'
+          git config --global user.name 'ahmedalatawi'
+          git config --global user.email 'aalat001@gmail.com'
       # Don't run custom Git hooks
       - run: git config --local core.hooksPath .git/hooks
       - run: yarn publish:lerna
