@@ -1,6 +1,6 @@
 {
   "name": "@reactcalendar/components",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "A set of calendar components",
   "main": "index.js",
   "author": "Ahmed Alatawi",
