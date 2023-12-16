@@ -1,6 +1,5 @@
-import React from "react";
-import TestComponent from '../src/TestComponent/TestComponent';
-
+import React from 'react'
+import TestComponent from '../src/TestComponent/TestComponent'
 
 export default {
   title: 'Example/TestComponent',
@@ -15,12 +14,12 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-};
+}
 
 // export default {
 //   title: "TestComponent"
 // };
 
-export const Primary = () => <TestComponent theme="primary" />;
+export const Primary = () => <TestComponent theme='primary' />
 
-export const Secondary = () => <TestComponent theme="secondary" />;
+export const Secondary = () => <TestComponent theme='secondary' />
