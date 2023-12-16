@@ -2,24 +2,27 @@ name: Create/update tag
 on:
   push:
     branch: 'main'
+
+name: Create Release
+
 jobs:
-  create-tag:
+  build:
+    name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@main
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          fetch-depth: 0
-      - uses: actions/action-create-tag@v1
-        id: 'tag_create'
-        with:
-          tag: 'latest'
-          tag_exists_error: false
-          message: 'Latest release'
-
-      # Print result using the env variable.
-      - run: |
-        echo "Tag already present: ${{ env.TAG_EXISTS }}"
-
-      # Print result using the action output.
-      - run: |
-        echo "Tag already present: ${{ steps.tag_create.outputs.tag_exists }}"
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
