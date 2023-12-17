@@ -1,22 +1,14 @@
-name: 'Action major version tag'
+name: Deploy
 
-on:
-  release:
-    types:
-      - published
-      - edited
+on: [deployment]
 
 jobs:
-  latest:
-    name: Update action tags
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Tag Repo
+        uses: richardsimko/update-tag@v1
         with:
-          ref: ${{ github.ref }}
-
-      - name: '🚀 publish action'
-        uses: Actions-R-Us/actions-tagger@v2
-        with:
-          publish_latest_tag: false
-          prefer_branch_releases: false
+          tag_name: '@reactcalendar/components'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
