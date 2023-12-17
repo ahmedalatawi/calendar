@@ -1,60 +1,54 @@
-name: Create/update tag
+name: Create Pre-Release
+
 on:
-  push:
-    branch: 'main'
+  pull_request:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all commits and tags
 
-    jobs:
-      deploy:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-            with:
-              fetch-depth: 0 # Fetch all commits and tags
+      - name: Get last pre-release tag or create new one
+        id: last-pre-release-tag
+        run: |
+          # Fetch all tags
+          git fetch --tags
 
-          - name: Get last non-pre-release tag
-            id: last-release-tag
-            run: |
-              # Fetch all tags and filter for non-pre-release tags
-              non_pre_release_tags=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname)
+          # Fetch only the tags that match the pre-release format
+          pre_release_tags=$(git tag -l 'v[0-9]*.[0-9]*.[0-9]*-rc.*' --sort=-v:refname)
 
-              # Get the last non-pre-release tag
-              last_non_pre_release_tag=$(echo "$non_pre_release_tags" | head -n 1)
+          # Get the last pre-release tag
+          last_pre_release_tag=$(echo "$pre_release_tags" | head -n 1)
 
-              if [ -z "$last_non_pre_release_tag" ]; then
-                # If no non-pre-release tags found, get the last pre-release tag
-                last_pre_release_tag=$(git tag --list 'v[0-9]*.[0-9]*.[0-9]*-rc.*' --sort=-v:refname | head -n 1)
-                
-                if [ -z "$last_pre_release_tag" ]; then
-                  # If no tags found at all, create the initial version
-                  new_tag="v0.0.1"
-                else
-                  # Extract major, minor, and patch components from the last pre-release tag
-                  IFS='.' read -r major minor patch rc_number <<< "$last_pre_release_tag"
-                  # Remove the -rc suffix
-                  new_tag="v$major.$minor.$patch"
-                fi
-              else
-                # Extract major, minor, and patch components from the last non-pre-release tag
-                IFS='.' read -r major minor patch <<< "$last_non_pre_release_tag"
-                # Increment the patch version
-                incremented_patch=$((patch + 1))
-                new_tag="$major.$minor.$incremented_patch"
-              fi
+          if [ -z "$last_pre_release_tag" ]; then
+            # If no pre-release tags found, get the last release tag
+            last_release_tag=$(git tag -l 'v[0-9]*.[0-9]*.[0-9]*' --sort=-v:refname | head -n 1)
+            IFS='.' read -r major minor patch <<< "$last_release_tag"
+            new_pre_release_tag="$major.$minor.$patch-rc.1"
+            echo "No pre-release tags found. Creating a new one: $new_pre_release_tag"
+          else
+            echo "Last pre-release tag: $last_pre_release_tag"
+            IFS='.' read -r major minor patch rc_number <<< "$last_pre_release_tag"
+            incremented_rc_number=$((rc_number + 1))
+            new_pre_release_tag="$major.$minor.$patch.$incremented_rc_number"
+          fi
 
-              echo "Last non-pre-release tag: $last_non_pre_release_tag"
-              echo "New tag: $new_tag"
-              echo "::set-output name=new_tag::$new_tag"
+          echo "::set-output name=new_pre_release_tag::$new_pre_release_tag"
 
-          - name: Set environment variable
-            run: echo "NEW_TAG=${{ steps.last-release-tag.outputs.new_tag }}" >> $GITHUB_ENV
+      - name: Set environment variable
+        run: echo "NEW_PRE_RELEASE_TAG=${{ steps.last-pre-release-tag.outputs.new_pre_release_tag }}" >> $GITHUB_ENV
 
-          - name: Display new tag
-            run: echo "New tag is $NEW_TAG"
+      - name: Display new pre-release tag
+        run: echo "New pre-release tag is $NEW_PRE_RELEASE_TAG"
 
-          - name: Create Release
-            uses: actions/create-release@v1
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            with:
-              tag_name: ${{ steps.last-release-tag.outputs.new_tag }}
-              release_name: ${{ steps.last-release-tag.outputs.new_tag }}
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.last-pre-release-tag.outputs.new_pre_release_tag }}
+          release_name: ${{ steps.last-pre-release-tag.outputs.new_pre_release_tag }}
+          prerelease: true
