@@ -1,8 +1,10 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from 'rollup-plugin-typescript2'
 import scss from 'rollup-plugin-scss'
+import terser from '@rollup/plugin-terser'
 // import postcss from "rollup-plugin-postcss";
 // import styles from "rollup-plugin-styles";
 
@@ -33,6 +35,7 @@ export default {
       outputStyle: 'compressed',
       fileName: 'index.css',
     }),
+    terser(),
     // postcss(),
     // scss({
     //   output: "./build/css/style.css",
