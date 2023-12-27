@@ -1,45 +1,62 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { NUMBER_OF_DAY_ROWS, NUMBER_OF_WEEKDAYS } from '../../constants'
-//import type { Dayjs } from 'dayjs'
+import { getCalendarStartDate } from '../../utils/dates'
+import { addDay, getDate, getTodayDate } from '../../utils/dayjsUtil'
+import type { Dayjs } from 'dayjs'
 
 interface DayCellProps {
-  index: number
-  //date: Dayjs
-  onSelect: (date: number) => void
+  row: number
+  weekday: number
+  firstDate: Dayjs
+  onSelect: (date: Dayjs) => void
 }
 
 interface DayCellRowsProps {
-  onSelect: (date: number) => void
+  children: ReactNode
 }
 
-//interface Props {}
+interface Props {
+  /** Initial date - default is today's date */
+  date?: Dayjs
+  /** Callback function when a date is selected */
+  onSelect?: (date: Dayjs) => void
+}
 
-function DaySelector() {
+function DaySelector({ date = getTodayDate(), onSelect }: Props) {
+  const calendarStartDate = getCalendarStartDate(date)
+
   return (
     <div className='day-selector'>
-      {Array.from({ length: NUMBER_OF_DAY_ROWS }).map((_, index) => (
-        <DayCellRows key={index} onSelect={() => console.log(index)} />
+      {Array.from({ length: NUMBER_OF_DAY_ROWS }).map((_, row) => (
+        <DayCellRows key={row}>
+          {Array.from({ length: NUMBER_OF_WEEKDAYS }).map((_, weekday) => (
+            <DayCell
+              key={weekday}
+              row={row}
+              weekday={weekday}
+              firstDate={calendarStartDate}
+              onSelect={(date) => onSelect?.(date)}
+            />
+          ))}
+        </DayCellRows>
       ))}
     </div>
   )
 }
 
-const DayCell = ({ index, onSelect }: DayCellProps) => {
+const DayCell = ({ row, weekday, firstDate, onSelect }: DayCellProps) => {
+  const date = addDay(firstDate, row * NUMBER_OF_WEEKDAYS + weekday)
+  const day = getDate(date)
+
   return (
-    <span className='day-cell' onClick={() => onSelect(index)}>
-      {index + 10}
+    <span className='day-cell' onClick={() => onSelect(date)}>
+      {day}
     </span>
   )
 }
 
-const DayCellRows = ({ onSelect }: DayCellRowsProps) => {
-  return (
-    <div className='day-cell-rows'>
-      {Array.from({ length: NUMBER_OF_WEEKDAYS }).map((_, index) => (
-        <DayCell key={index} index={index} onSelect={onSelect} />
-      ))}
-    </div>
-  )
+const DayCellRows = ({ children }: DayCellRowsProps) => {
+  return <div className='day-cell-rows'>{children}</div>
 }
 
 export default DaySelector

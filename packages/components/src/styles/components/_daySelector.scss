@@ -1,0 +1,28 @@
+.day-selector {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 4px;
+}
+.day-cell-rows {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.day-cell {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-content: center;
+  color: #3c3f43;
+
+  &:hover {
+    color: #169de0;
+    background-color: #f2fcff;
+  }
+}

@@ -1,9 +1,11 @@
 import React from 'react'
-import DayPicker from '../src/pickers/DayPicker/DayPicker'
+import DaySelector from '../src/selectors/DaySelector/DaySelector'
+
+import './styles.css'
 
 export default {
-  title: 'Example/DayPicker',
-  component: DayPicker,
+  title: 'Example/DaySelector',
+  component: DaySelector,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -16,8 +18,8 @@ export default {
   },
 }
 
-// export default {
-//   title: "TestComponent"
-// };
-
-export const Default = () => <DayPicker />
+export const Default = () => (
+  <div className='DaySelector'>
+    <DaySelector />
+  </div>
+)
