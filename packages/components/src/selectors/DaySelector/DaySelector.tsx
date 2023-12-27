@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, memo } from 'react'
 import { NUMBER_OF_DAY_ROWS, NUMBER_OF_WEEKDAYS } from '../../constants'
 import { getCalendarStartDate } from '../../utils/dates'
 import { addDay, getDate, getTodayDate, getWeekdaysShort } from '../../utils/dayjsUtil'
@@ -24,17 +24,10 @@ interface Props {
 
 function DaySelector({ date = getTodayDate(), onSelect }: Props) {
   const calendarStartDate = getCalendarStartDate(date)
-  const weekdayShorts = getWeekdaysShort()
 
   return (
     <div className='day-selector'>
-      <div className='day-selector-header-container'>
-        {weekdayShorts.map((weekdayShort) => (
-          <span className='day-selector-header' key={weekdayShort}>
-            {weekdayShort}
-          </span>
-        ))}
-      </div>
+      <WeekdaysShort />
       {Array.from({ length: NUMBER_OF_DAY_ROWS }).map((_, row) => (
         <DayCellRows key={row}>
           {Array.from({ length: NUMBER_OF_WEEKDAYS }).map((_, weekday) => (
@@ -66,5 +59,19 @@ const DayCell = ({ row, weekday, firstDate, onSelect }: DayCellProps) => {
 const DayCellRows = ({ children }: DayCellRowsProps) => {
   return <div className='day-cell-rows'>{children}</div>
 }
+
+const WeekdaysShort = memo(function WeekdaysShort() {
+  const weekdayShorts = getWeekdaysShort()
+
+  return (
+    <div className='day-selector-header-container'>
+      {weekdayShorts.map((weekdayShort) => (
+        <span className='day-selector-header' key={weekdayShort}>
+          {weekdayShort}
+        </span>
+      ))}
+    </div>
+  )
+})
 
 export default DaySelector
