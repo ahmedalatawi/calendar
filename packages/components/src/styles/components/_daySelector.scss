@@ -19,10 +19,21 @@
   height: 16px;
   display: grid;
   place-content: center;
-  color: #3c3f43;
+  color: #1a1d24;
 
   &:hover {
     color: #169de0;
     background-color: #f2fcff;
   }
+}
+.day-selector-header-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.day-selector-header {
+  font-size: 14px;
+  color: #a4a9b3;
+  display: grid;
+  place-content: center;
 }

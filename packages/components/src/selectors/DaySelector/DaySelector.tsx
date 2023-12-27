@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { NUMBER_OF_DAY_ROWS, NUMBER_OF_WEEKDAYS } from '../../constants'
 import { getCalendarStartDate } from '../../utils/dates'
-import { addDay, getDate, getTodayDate } from '../../utils/dayjsUtil'
+import { addDay, getDate, getTodayDate, getWeekdaysShort } from '../../utils/dayjsUtil'
 import type { Dayjs } from 'dayjs'
 
 interface DayCellProps {
@@ -24,9 +24,17 @@ interface Props {
 
 function DaySelector({ date = getTodayDate(), onSelect }: Props) {
   const calendarStartDate = getCalendarStartDate(date)
+  const weekdayShorts = getWeekdaysShort()
 
   return (
     <div className='day-selector'>
+      <div className='day-selector-header-container'>
+        {weekdayShorts.map((weekdayShort) => (
+          <span className='day-selector-header' key={weekdayShort}>
+            {weekdayShort}
+          </span>
+        ))}
+      </div>
       {Array.from({ length: NUMBER_OF_DAY_ROWS }).map((_, row) => (
         <DayCellRows key={row}>
           {Array.from({ length: NUMBER_OF_WEEKDAYS }).map((_, weekday) => (
