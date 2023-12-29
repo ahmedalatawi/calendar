@@ -1,5 +1,5 @@
 import { Dayjs } from 'dayjs'
-import { addDay, getFirstDayOfWeek, getMonth, getStartWeekDay, getYear, setDateOfMonth } from './dayjsUtil'
+import { addDay, getDate, getFirstDayOfWeek, getMonth, getStartWeekDay, getYear, setDateOfMonth } from './dayjsUtil'
 
 export const getCalendarStartDate = (date: Dayjs) => {
   const weekFirstDay = getFirstDayOfWeek()
@@ -11,4 +11,12 @@ export const getCalendarStartDate = (date: Dayjs) => {
 
 export const isWithinCurrentMonth = (calendarDate: Dayjs, selectedDate: Dayjs) => {
   return getYear(calendarDate) === getYear(selectedDate) && getMonth(calendarDate) === getMonth(selectedDate)
+}
+
+export const isEqualDate = (calendarDate: Dayjs, selectedDate: Dayjs) => {
+  return (
+    getYear(calendarDate) === getYear(selectedDate) &&
+    getMonth(calendarDate) === getMonth(selectedDate) &&
+    getDate(calendarDate) === getDate(selectedDate)
+  )
 }
