@@ -9,38 +9,45 @@ import useClassNames from '../../hooks/useClassNames'
 interface DayCellProps {
   row: number
   weekday: number
+  classNamePrefix: string
   calendarStartDate: Dayjs
   selectedDate: Dayjs
   onSelect: (date: Dayjs) => void
 }
 
 interface DayCellRowsProps {
+  classNamePrefix?: string
   children: ReactNode
 }
 
-interface Props {
+interface HeaderProps {
+  classNamePrefix?: string
+}
+
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   /** Initial date - default is today's date */
   date?: Dayjs
   /** Callback function when a date is selected */
-  onSelect?: (date: Dayjs) => void
+  onSelectDate?: (date: Dayjs) => void
 }
 
-function DaySelector({ date = getTodayDate(), onSelect }: Props) {
+function DaySelector({ className = 'rc-day-selector', date = getTodayDate(), onSelectDate, ...props }: Props) {
   const calendarStartDate = getCalendarStartDate(date)
 
   return (
-    <div className='day-selector'>
-      <Header />
+    <div className={className} {...props}>
+      <Header classNamePrefix={className} />
       {Array.from({ length: NUMBER_OF_DAY_ROWS }).map((_, row) => (
-        <DayCellRows key={row}>
+        <DayCellRows key={row} classNamePrefix={className}>
           {Array.from({ length: NUMBER_OF_WEEKDAYS }).map((_, weekday) => (
             <DayCell
+              classNamePrefix={className}
               key={weekday}
               row={row}
               weekday={weekday}
               selectedDate={date}
               calendarStartDate={calendarStartDate}
-              onSelect={(date) => onSelect?.(date)}
+              onSelect={(date) => onSelectDate?.(date)}
             />
           ))}
         </DayCellRows>
@@ -49,15 +56,17 @@ function DaySelector({ date = getTodayDate(), onSelect }: Props) {
   )
 }
 
-const DayCell = ({ row, weekday, calendarStartDate, selectedDate, onSelect }: DayCellProps) => {
+const DayCell = ({ row, weekday, calendarStartDate, selectedDate, classNamePrefix, onSelect }: DayCellProps) => {
   const { getInCurrentMonthClassName } = useClassNames()
 
   const date = addDay(calendarStartDate, row * NUMBER_OF_WEEKDAYS + weekday)
   const day = getDate(date)
 
+  const className = `${classNamePrefix}-cell`
+
   return (
     <span
-      className={classNames('day-cell', { ...getInCurrentMonthClassName(date, selectedDate) })}
+      className={classNames(className, { ...getInCurrentMonthClassName(className, date, selectedDate) })}
       onClick={() => onSelect(date)}
     >
       {day}
@@ -65,17 +74,20 @@ const DayCell = ({ row, weekday, calendarStartDate, selectedDate, onSelect }: Da
   )
 }
 
-const DayCellRows = ({ children }: DayCellRowsProps) => {
-  return <div className='day-cell-row'>{children}</div>
+const DayCellRows = ({ classNamePrefix, children }: DayCellRowsProps) => {
+  const className = `${classNamePrefix}-cell-row`
+
+  return <div className={className}>{children}</div>
 }
 
-const Header = memo(function Header() {
+const Header = memo(function Header({ classNamePrefix }: HeaderProps) {
+  const className = `${classNamePrefix}-header`
   const weekdayShorts = getWeekdaysShort()
 
   return (
-    <div className='day-selector-header'>
+    <div className={className}>
       {weekdayShorts.map((weekdayShort) => (
-        <span className='day-selector-header-cell' key={weekdayShort}>
+        <span className={`${className}-cell`} key={weekdayShort}>
           {weekdayShort}
         </span>
       ))}

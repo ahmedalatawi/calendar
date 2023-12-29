@@ -1,4 +1,4 @@
-.day-selector {
+.rc-day-selector {
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   gap: 4px;
@@ -17,7 +17,7 @@
   }
 }
 
-.day-cell {
+.rc-day-selector-cell {
   padding: 6px;
   border-radius: 6px;
   border: 1px solid transparent;
@@ -30,7 +30,7 @@
   place-content: center;
   color: #c5c6c7;
 
-  &-in-current-month {
+  &-current {
     color: #575757;
   }
 

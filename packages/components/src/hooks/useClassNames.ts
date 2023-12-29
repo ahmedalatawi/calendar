@@ -2,12 +2,12 @@ import { Dayjs } from 'dayjs'
 import { isWithinCurrentMonth } from '../utils/dates'
 
 const useClassNames = () => {
-  const inCurrentMonthClassName = 'day-cell-in-current-month'
+  const inCurrentMonthClassName = 'current'
 
   return {
-    getInCurrentMonthClassName: (calendarDate: Dayjs, selectedDate: Dayjs) => {
+    getInCurrentMonthClassName: (className: string, calendarDate: Dayjs, selectedDate: Dayjs) => {
       return {
-        [inCurrentMonthClassName]: isWithinCurrentMonth(calendarDate, selectedDate),
+        [`${className}-${inCurrentMonthClassName}`]: isWithinCurrentMonth(calendarDate, selectedDate),
       }
     },
   }
