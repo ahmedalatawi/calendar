@@ -11,9 +11,13 @@ dayjs.extend(localeData)
 
 export const getTodayDate = () => dayjs()
 export const getDate = (date: Dayjs) => date.date()
+
 export const getFirstDayOfWeek = () => dayjs().locale('en').startOf('week').day()
 export const getStartWeekDay = (date: Dayjs) => date.weekday() + date.startOf('week').day()
 export const getWeekdaysShort = () => dayjs().localeData().weekdaysMin()
+
+export const getYear = (date: Dayjs) => date.year()
+export const getMonth = (date: Dayjs) => date.month()
 
 export const setDateOfMonth = (date: Dayjs, day: number) => date.date(day)
 export const addDay = (date: Dayjs, days: number) => date.add(days, 'day')
