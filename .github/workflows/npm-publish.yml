@@ -1,38 +1,38 @@
-# name: Node.js Package
+name: Node.js Package
 
-# on:
-#   push:
-#     branches:
-#       - main
-#   workflow_dispatch:
-#   release:
-#     types: [created]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  release:
+    types: [created]
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#         with:
-#           fetch-depth: 0
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#       - run: yarn
-#       - run: yarn lint:since
-#       - run: yarn test:since
-#       - run: yarn build
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn
+      - run: yarn lint:since
+      - run: yarn test:since
+      - run: yarn build
 
-#       # Publish to NPM
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#           registry-url: https://registry.npmjs.org/
-#       - run: |
-#           git config --local user.name 'github-actions[bot]'
-#           git config --local user.email 'github-actions[bot]@users.noreply.github.com'
-#       # Don't run custom Git hooks
-#       - run: git config --local core.hooksPath .git/hooks
-#       - run: yarn publish:lerna
-#         env:
-#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Publish to NPM
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: |
+          git config --local user.name 'github-actions[bot]'
+          git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+      # Don't run custom Git hooks
+      - run: git config --local core.hooksPath .git/hooks
+      - run: yarn publish:lerna
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
