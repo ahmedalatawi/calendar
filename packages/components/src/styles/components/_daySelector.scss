@@ -30,6 +30,11 @@
   place-content: center;
   color: #c5c6c7;
 
+  &:hover {
+    color: #1675e0;
+    background-color: rgb(from #cce9ff r g b / 50%);
+  }
+
   &-current {
     color: #575757;
   }
@@ -38,14 +43,19 @@
     box-shadow: inset 0 0 0 1px #3498ff;
   }
 
+  &-selected {
+    color: #fff;
+    background-color: #3498ff;
+
+    &:hover {
+      color: #fff;
+      background-color: #1675e0;
+    }
+  }
+
   &-row {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 4px;
-  }
-
-  &:hover {
-    color: #1675e0;
-    background-color: rgb(from #cce9ff r g b / 50%);
   }
 }

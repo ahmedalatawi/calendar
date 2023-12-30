@@ -2,14 +2,12 @@ import { Dayjs } from 'dayjs'
 import { isEqualDate, isWithinCurrentMonth } from '../utils/dates'
 
 const useClassNames = () => {
-  const currentPrefix = 'current'
-  const todayPrefix = 'today'
-
   return {
-    getInCurrentMonthClassName: (className: string, calendarDate: Dayjs, selectedDate: Dayjs) => {
+    getClassNames: (className: string, calendarDate: Dayjs, selectedDate: Dayjs, today: Dayjs) => {
       return {
-        [`${className}-${currentPrefix}`]: isWithinCurrentMonth(calendarDate, selectedDate),
-        [`${className}-${todayPrefix}`]: isEqualDate(calendarDate, selectedDate),
+        [`${className}-current`]: isWithinCurrentMonth(calendarDate, selectedDate),
+        [`${className}-today`]: isEqualDate(calendarDate, today),
+        [`${className}-selected`]: isEqualDate(calendarDate, selectedDate),
       }
     },
   }
