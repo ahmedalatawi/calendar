@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DaySelector from '../src/selectors/DaySelector/DaySelector'
 
 import './styles.css'
@@ -18,8 +18,23 @@ export default {
   },
 }
 
-export const Default = () => (
-  <div className='DaySelector'>
-    <DaySelector />
-  </div>
-)
+export const Default = () => {
+  const today = new Date().setHours(0, 0, 0, 0)
+  const [date, setDate] = useState(new Date(today))
+
+  return (
+    <>
+      <p>
+        Selected date: <span className='selected-date-text'>{date.toLocaleDateString()}</span>
+      </p>
+      <div className='day-selector-demo'>
+        <DaySelector
+          date={date}
+          onSelect={(date) => {
+            setDate(date)
+          }}
+        />
+      </div>
+    </>
+  )
+}

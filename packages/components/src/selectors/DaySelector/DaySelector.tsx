@@ -5,6 +5,7 @@ import { addDay, getDate, getTodayDate, getWeekdaysShort } from '../../utils/day
 import type { Dayjs } from 'dayjs'
 import classNames from 'classnames'
 import useClassNames from '../../hooks/useClassNames'
+import dayjs from 'dayjs'
 
 interface DayCellProps {
   row: number
@@ -25,31 +26,32 @@ interface HeaderProps {
   classNamePrefix?: string
 }
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+interface Props {
+  classNamePrefix?: string
   /** Initial date - default is today's date */
-  date?: Dayjs
+  date?: Date
   /** Callback function when a date is selected */
-  onSelectDate?: (date: Dayjs) => void
+  onSelect?: (date: Date) => void
 }
 
-function DaySelector({ className = 'rc-day-selector', date, onSelectDate, ...props }: Props) {
+function DaySelector({ classNamePrefix = 'rc-day-selector', date, onSelect }: Props) {
   const today = getTodayDate()
-  const [selectedDate, setSelectedDate] = useState(date ?? today)
+  const [selectedDate, setSelectedDate] = useState(date ? dayjs(date) : today)
   const calendarStartDate = getCalendarStartDate(selectedDate)
 
   const handleSelectDate = (date: Dayjs) => {
     setSelectedDate(date)
-    onSelectDate?.(date)
+    onSelect?.(dayjs(date).toDate())
   }
 
   return (
-    <div className={className} {...props}>
-      <Header classNamePrefix={className} />
+    <div className={classNamePrefix}>
+      <Header classNamePrefix={classNamePrefix} />
       {Array.from({ length: NUMBER_OF_DAY_ROWS }).map((_, row) => (
-        <DayCellRows key={row} classNamePrefix={className}>
+        <DayCellRows key={row} classNamePrefix={classNamePrefix}>
           {Array.from({ length: NUMBER_OF_WEEKDAYS }).map((_, weekday) => (
             <DayCell
-              classNamePrefix={className}
+              classNamePrefix={classNamePrefix}
               key={weekday}
               row={row}
               weekday={weekday}
