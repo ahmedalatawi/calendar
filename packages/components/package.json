@@ -1,6 +1,6 @@
 {
   "name": "@reactcalendar/components",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "A set of calendar components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
