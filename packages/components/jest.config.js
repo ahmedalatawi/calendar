@@ -4,6 +4,7 @@ module.exports = {
   setupFilesAfterEnv: ['./jest.setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js'],
   testPathIgnorePatterns: ['node_modules/'],
+  snapshotResolver: './snapshotResolver.js',
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
