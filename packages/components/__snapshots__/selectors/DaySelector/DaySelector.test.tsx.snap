@@ -1,618 +1,283 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DaySelector should render the component with no props 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="rc-day-selector"
-      >
-        <div
-          class="rc-day-selector-header"
-        >
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            Su
-          </span>
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            Mo
-          </span>
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            Tu
-          </span>
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            We
-          </span>
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            Th
-          </span>
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            Fr
-          </span>
-          <span
-            class="rc-day-selector-header-cell"
-          >
-            Sa
-          </span>
-        </div>
-        <div
-          class="rc-day-selector-cell-row"
-        >
-          <span
-            class="rc-day-selector-cell"
-          >
-            31
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
-          >
-            1
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            2
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            3
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            4
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            5
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            6
-          </span>
-        </div>
-        <div
-          class="rc-day-selector-cell-row"
-        >
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            7
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            8
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            9
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            10
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            11
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            12
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            13
-          </span>
-        </div>
-        <div
-          class="rc-day-selector-cell-row"
-        >
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            14
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            15
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            16
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            17
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            18
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            19
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            20
-          </span>
-        </div>
-        <div
-          class="rc-day-selector-cell-row"
-        >
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            21
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            22
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            23
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            24
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            25
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            26
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            27
-          </span>
-        </div>
-        <div
-          class="rc-day-selector-cell-row"
-        >
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            28
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            29
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            30
-          </span>
-          <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
-          >
-            31
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            1
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            2
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            3
-          </span>
-        </div>
-        <div
-          class="rc-day-selector-cell-row"
-        >
-          <span
-            class="rc-day-selector-cell"
-          >
-            4
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            5
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            6
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            7
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            8
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            9
-          </span>
-          <span
-            class="rc-day-selector-cell"
-          >
-            10
-          </span>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
+<div>
+  <div
+    class="rc-day-selector"
+  >
     <div
-      class="rc-day-selector"
+      class="rc-day-selector-header"
     >
-      <div
-        class="rc-day-selector-header"
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          Su
-        </span>
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          Mo
-        </span>
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          Tu
-        </span>
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          We
-        </span>
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          Th
-        </span>
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          Fr
-        </span>
-        <span
-          class="rc-day-selector-header-cell"
-        >
-          Sa
-        </span>
-      </div>
-      <div
-        class="rc-day-selector-cell-row"
+        Su
+      </span>
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-cell"
-        >
-          31
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
-        >
-          1
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          2
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          3
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          4
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          5
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          6
-        </span>
-      </div>
-      <div
-        class="rc-day-selector-cell-row"
+        Mo
+      </span>
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          7
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          8
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          9
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          10
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          11
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          12
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          13
-        </span>
-      </div>
-      <div
-        class="rc-day-selector-cell-row"
+        Tu
+      </span>
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          14
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          15
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          16
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          17
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          18
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          19
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          20
-        </span>
-      </div>
-      <div
-        class="rc-day-selector-cell-row"
+        We
+      </span>
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          21
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          22
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          23
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          24
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          25
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          26
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          27
-        </span>
-      </div>
-      <div
-        class="rc-day-selector-cell-row"
+        Th
+      </span>
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          28
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          29
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          30
-        </span>
-        <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
-        >
-          31
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          1
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          2
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          3
-        </span>
-      </div>
-      <div
-        class="rc-day-selector-cell-row"
+        Fr
+      </span>
+      <span
+        class="rc-day-selector-header-cell"
       >
-        <span
-          class="rc-day-selector-cell"
-        >
-          4
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          5
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          6
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          7
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          8
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          9
-        </span>
-        <span
-          class="rc-day-selector-cell"
-        >
-          10
-        </span>
-      </div>
+        Sa
+      </span>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
+    <div
+      class="rc-day-selector-cell-row"
+    >
+      <span
+        class="rc-day-selector-cell"
+      >
+        31
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
+      >
+        1
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        2
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        3
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        4
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        5
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        6
+      </span>
+    </div>
+    <div
+      class="rc-day-selector-cell-row"
+    >
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        7
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        8
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        9
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        10
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        11
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        12
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        13
+      </span>
+    </div>
+    <div
+      class="rc-day-selector-cell-row"
+    >
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        14
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        15
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        16
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        17
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        18
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        19
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        20
+      </span>
+    </div>
+    <div
+      class="rc-day-selector-cell-row"
+    >
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        21
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        22
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        23
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        24
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        25
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        26
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        27
+      </span>
+    </div>
+    <div
+      class="rc-day-selector-cell-row"
+    >
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        28
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        29
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        30
+      </span>
+      <span
+        class="rc-day-selector-cell rc-day-selector-cell-current"
+      >
+        31
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        1
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        2
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        3
+      </span>
+    </div>
+    <div
+      class="rc-day-selector-cell-row"
+    >
+      <span
+        class="rc-day-selector-cell"
+      >
+        4
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        5
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        6
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        7
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        8
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        9
+      </span>
+      <span
+        class="rc-day-selector-cell"
+      >
+        10
+      </span>
+    </div>
+  </div>
+</div>
 `;
