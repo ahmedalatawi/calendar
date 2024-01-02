@@ -11,7 +11,7 @@ describe('DaySelector', () => {
     const component = render(<DaySelector />)
 
     expect(component).toBeTruthy()
-    expect(component.container).toMatchSnapshot()
+    expect(component).toMatchSnapshot()
   })
 
   test('should apply correct className for selected date', () => {
