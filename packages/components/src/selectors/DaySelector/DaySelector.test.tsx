@@ -1,6 +1,6 @@
 import React from 'react'
 import { describe, test, expect, jest } from '@jest/globals'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import DaySelector from './DaySelector'
