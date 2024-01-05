@@ -1,0 +1,24 @@
+@import '../abstracts';
+
+.rc-icon {
+  width: 14px;
+  height: 14px;
+  padding: 6px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $gray-300;
+  cursor: pointer;
+  transition:
+    color 0.15s ease-out,
+    background-color 0.15s ease-out;
+  -webkit-box-align: center;
+  background-color: transparent;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $gray-light;
+  }
+}

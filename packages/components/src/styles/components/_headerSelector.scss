@@ -1,0 +1,36 @@
+@import '../abstracts';
+
+.rc-header-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  font-size: 14px;
+  color: $gray-300;
+  flex-wrap: nowrap;
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 4px;
+  }
+
+  &-title {
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+      color 0.15s ease-out,
+      background-color 0.15s ease-out;
+    -webkit-box-align: center;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $gray-light;
+    }
+  }
+}
