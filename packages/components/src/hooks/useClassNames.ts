@@ -3,9 +3,9 @@ import { isEqualDate, isWithinCurrentMonth } from '../utils/dates'
 
 const useClassNames = () => {
   return {
-    getClassNames: (className: string, calendarDate: Dayjs, selectedDate: Dayjs, today: Dayjs) => {
+    getClassNames: (className: string, currentDate: Dayjs, calendarDate: Dayjs, selectedDate: Dayjs, today: Dayjs) => {
       return {
-        [`${className}-current`]: isWithinCurrentMonth(calendarDate, selectedDate),
+        [`${className}-current`]: isWithinCurrentMonth(calendarDate, currentDate),
         [`${className}-today`]: isEqualDate(calendarDate, today),
         [`${className}-selected`]: isEqualDate(calendarDate, selectedDate),
       }

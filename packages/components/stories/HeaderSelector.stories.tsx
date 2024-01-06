@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import HeaderSelector from '../src/selectors/HeaderSelector/HeaderSelector'
+import DaySelector from '../src/selectors/DaySelector/DaySelector'
 
 import './styles.css'
 
@@ -29,6 +30,31 @@ export const Default = () => {
       </p>
       <div className='header-selector-demo'>
         <HeaderSelector date={date} onSelect={setDate} />
+      </div>
+    </>
+  )
+}
+
+export const WithDaySelector = () => {
+  const today = new Date().setHours(0, 0, 0, 0)
+
+  const [headerDate, setHeaderDate] = useState(new Date(today))
+  const [date, setDate] = useState(new Date(today))
+
+  return (
+    <>
+      <p>
+        Selected date: <span className='selected-date-text-demo'>{date.toLocaleDateString()}</span>
+      </p>
+      <div className='day-selector-demo'>
+        <HeaderSelector date={headerDate} onSelect={setHeaderDate} />
+        <DaySelector
+          date={headerDate}
+          onSelect={(d) => {
+            setHeaderDate(d)
+            setDate(d)
+          }}
+        />
       </div>
     </>
   )

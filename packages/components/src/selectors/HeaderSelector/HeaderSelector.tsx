@@ -3,6 +3,7 @@ import ChevronLeftIcon from '../../icons/ChevronLeftIcon'
 import ChevronRightIcon from '../../icons/ChevronRightIcon'
 import { addMonth, getMonth, getMonthsShort, getTodayDate, getYear } from '../../utils/dayjsUtil'
 import dayjs from 'dayjs'
+import { isEqualDate } from '../../utils/dates'
 
 interface Props {
   date?: Date
@@ -16,6 +17,10 @@ function HeaderSelector({ date, onSelect }: Props) {
   const initialDate = date ? dayjs(date) : today
 
   const [selectedDate, setSelectedDate] = useState(initialDate)
+
+  if (!isEqualDate(initialDate, selectedDate)) {
+    setSelectedDate(initialDate)
+  }
 
   const month = getMonth(selectedDate)
   const year = getYear(selectedDate)

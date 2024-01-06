@@ -11,6 +11,7 @@ interface DayCellProps {
   row: number
   weekday: number
   today: Dayjs
+  currentDate: Dayjs
   classNamePrefix: string
   calendarStartDate: Dayjs
   selectedDate: Dayjs
@@ -36,8 +37,11 @@ interface Props {
 
 function DaySelector({ classNamePrefix = 'rc-day-selector', date, onSelect }: Props) {
   const today = getTodayDate()
-  const [selectedDate, setSelectedDate] = useState(date ? dayjs(date) : today)
-  const calendarStartDate = getCalendarStartDate(selectedDate)
+  const currentDate = date ? dayjs(date) : today
+
+  const [selectedDate, setSelectedDate] = useState(currentDate)
+
+  const calendarStartDate = getCalendarStartDate(currentDate)
 
   const handleSelectDate = (date: Dayjs) => {
     setSelectedDate(date)
@@ -56,6 +60,7 @@ function DaySelector({ classNamePrefix = 'rc-day-selector', date, onSelect }: Pr
               row={row}
               weekday={weekday}
               today={today}
+              currentDate={currentDate}
               selectedDate={selectedDate}
               calendarStartDate={calendarStartDate}
               onSelect={handleSelectDate}
@@ -67,18 +72,27 @@ function DaySelector({ classNamePrefix = 'rc-day-selector', date, onSelect }: Pr
   )
 }
 
-const DayCell = ({ row, weekday, calendarStartDate, selectedDate, today, classNamePrefix, onSelect }: DayCellProps) => {
+const DayCell = ({
+  row,
+  weekday,
+  currentDate,
+  calendarStartDate,
+  selectedDate,
+  today,
+  classNamePrefix,
+  onSelect,
+}: DayCellProps) => {
   const { getClassNames } = useClassNames()
 
-  const date = addDay(calendarStartDate, row * NUMBER_OF_WEEKDAYS + weekday)
-  const day = getDate(date)
+  const calendarDate = addDay(calendarStartDate, row * NUMBER_OF_WEEKDAYS + weekday)
+  const day = getDate(calendarDate)
 
   const className = `${classNamePrefix}-cell`
 
   return (
     <span
-      className={classNames(className, { ...getClassNames(className, date, selectedDate, today) })}
-      onClick={() => onSelect(date)}
+      className={classNames(className, { ...getClassNames(className, currentDate, calendarDate, selectedDate, today) })}
+      onClick={() => onSelect(calendarDate)}
     >
       {day}
     </span>
