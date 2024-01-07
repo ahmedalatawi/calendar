@@ -11,10 +11,12 @@
 .selected-date-text-demo {
   color: #004299;
   font-size: 18px;
+  display: block;
 }
 
 .header-selector-demo {
   border: 1px solid #e6e6e6;
   min-width: 264px;
   border-radius: 6px;
+  padding: 4px;
 }

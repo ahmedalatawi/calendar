@@ -26,10 +26,15 @@ export const Default = () => {
   return (
     <>
       <p>
-        Selected date: <span className='selected-date-text-demo'>{date.toLocaleDateString()}</span>
+        <span className='selected-date-text-demo'>Date: {date.toLocaleDateString()}</span>
       </p>
       <div className='header-selector-demo'>
-        <HeaderSelector date={date} onSelect={setDate} />
+        <HeaderSelector
+          date={date}
+          onSelect={setDate}
+          onClickMonth={(month) => console.log('month: ', month)}
+          onClickYear={(year) => console.log('year: ', year)}
+        />
       </div>
     </>
   )
@@ -44,7 +49,7 @@ export const WithDaySelector = () => {
   return (
     <>
       <p>
-        Selected date: <span className='selected-date-text-demo'>{date.toLocaleDateString()}</span>
+        <span className='selected-date-text-demo'>Selected date: {date.toLocaleDateString()}</span>
       </p>
       <div className='day-selector-demo'>
         <HeaderSelector date={headerDate} onSelect={setHeaderDate} />

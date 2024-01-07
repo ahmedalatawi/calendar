@@ -40,9 +40,9 @@ describe('DaySelector', () => {
   })
 
   test('should render correct today date', () => {
-    const today = dayjs().day()
+    const today = dayjs()
     const { container } = render(<DaySelector />)
-    expect(container.getElementsByClassName('rc-day-selector-cell-today')[0].textContent).toBe(today.toString())
+    expect(container.getElementsByClassName('rc-day-selector-cell-today')[0].textContent).toBe(today.date().toString())
   })
 
   test('should call onSelect with the correct date when date cell is clicked', async () => {

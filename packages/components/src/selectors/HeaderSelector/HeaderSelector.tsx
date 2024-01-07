@@ -8,9 +8,11 @@ import { isEqualDate } from '../../utils/dates'
 interface Props {
   date?: Date
   onSelect?: (date: Date) => void
+  onClickMonth?: (month: number) => void
+  onClickYear?: (year: number) => void
 }
 
-function HeaderSelector({ date, onSelect }: Props) {
+function HeaderSelector({ date, onSelect, onClickMonth, onClickYear }: Props) {
   const today = getTodayDate()
   const shortMonths = getMonthsShort()
 
@@ -41,8 +43,12 @@ function HeaderSelector({ date, onSelect }: Props) {
     <div className='rc-header-selector'>
       <ChevronLeftIcon onClick={() => handleOnPrevMonth()} />
       <div className='rc-header-selector-container'>
-        <span className='rc-header-selector-title'>{shortMonths[month]}</span>
-        <span className='rc-header-selector-title'>{year}</span>
+        <span className='rc-header-selector-title' onClick={() => onClickMonth?.(month)}>
+          {shortMonths[month]}
+        </span>
+        <span className='rc-header-selector-title' onClick={() => onClickYear?.(year)}>
+          {year}
+        </span>
       </div>
       <ChevronRightIcon onClick={() => handleOnNextMonth()} />
     </div>
