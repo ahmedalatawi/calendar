@@ -29,7 +29,7 @@ describe('HeaderSelector', () => {
   })
 
   test('should render correct month and year when date is passed in', () => {
-    const date = dayjs('2002-12-11T00:00:00').toDate()
+    const date = dayjs('2002-12-11T00:00:00')
 
     const { container } = render(<HeaderSelector date={date} />)
 
@@ -38,7 +38,7 @@ describe('HeaderSelector', () => {
   })
 
   test('should call onSelect with the correct date when prev or next icon is clicked', async () => {
-    const date = dayjs('2002-12-11T00:00:00').toDate()
+    const date = dayjs('2002-12-11T00:00:00')
     const onSelectMock = jest.fn()
 
     const { container } = render(<HeaderSelector date={date} onSelect={onSelectMock} />)
@@ -49,23 +49,23 @@ describe('HeaderSelector', () => {
     fireEvent.click(prevIcon)
 
     await waitFor(() => {
-      expect(onSelectMock).toHaveBeenCalledWith(dayjs('2002-11-11T00:00:00').toDate())
+      expect(onSelectMock).toHaveBeenCalledWith(dayjs('2002-11-11T00:00:00'))
     })
 
     fireEvent.click(nextIcon)
 
     await waitFor(() => {
-      expect(onSelectMock).toHaveBeenCalledWith(dayjs('2003-01-11T00:00:00').toDate())
+      expect(onSelectMock).toHaveBeenCalledWith(dayjs('2003-01-11T00:00:00'))
     })
   })
 
   test('should call onClickMonth with the correct month when month is clicked', async () => {
-    const date = dayjs('2002-12-11T00:00:00').toDate()
+    const date = dayjs('2002-12-11T00:00:00')
     const onClickMonthMock = jest.fn()
 
-    const { container } = render(<HeaderSelector date={date} onClickMonth={onClickMonthMock} />)
+    const { getByText } = render(<HeaderSelector date={date} onClickMonth={onClickMonthMock} />)
 
-    const month = container.getElementsByClassName('rc-header-selector-title')[0]
+    const month = getByText('Dec')
 
     fireEvent.click(month)
 
@@ -75,12 +75,12 @@ describe('HeaderSelector', () => {
   })
 
   test('should call onClickYear with the correct year when year is clicked', async () => {
-    const date = dayjs('2002-12-11T00:00:00').toDate()
+    const date = dayjs('2002-12-11T00:00:00')
     const onClickYearMock = jest.fn()
 
-    const { container } = render(<HeaderSelector date={date} onClickYear={onClickYearMock} />)
+    const { getByText } = render(<HeaderSelector date={date} onClickYear={onClickYearMock} />)
 
-    const year = container.getElementsByClassName('rc-header-selector-title')[1]
+    const year = getByText('2002')
 
     fireEvent.click(year)
 

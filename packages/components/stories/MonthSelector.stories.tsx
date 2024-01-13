@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import HeaderSelector from '../src/selectors/HeaderSelector/HeaderSelector'
-import DaySelector from '../src/selectors/DaySelector/DaySelector'
+import MonthSelector from '../src/selectors/MonthSelector/MonthSelector'
 
 import './styles.css'
 import dayjs from 'dayjs'
+import HeaderSelector from '../src/selectors/HeaderSelector/HeaderSelector'
 
 export default {
-  title: 'Example/HeaderSelector',
-  component: HeaderSelector,
+  title: 'Example/MonthSelector',
+  component: MonthSelector,
   parameters: {
     layout: 'centered',
   },
@@ -25,12 +25,12 @@ export const Default = () => {
       <p>
         <span className='demo-date-text'>Date: {date.format('MM/DD/YYYY')}</span>
       </p>
-      <div className='demo-header-container'>
-        <HeaderSelector
+      <div className='demo-selector-container'>
+        <MonthSelector
           date={date}
-          onSelect={setDate}
-          onClickMonth={(month) => console.log('month: ', month)}
-          onClickYear={(year) => console.log('year: ', year)}
+          onSelect={(date) => {
+            setDate(date)
+          }}
         />
       </div>
     </>
@@ -50,7 +50,7 @@ export const WithDaySelector = () => {
       </p>
       <div className='demo-selector-container'>
         <HeaderSelector date={headerDate} onSelect={setHeaderDate} />
-        <DaySelector
+        <MonthSelector
           date={headerDate}
           onSelect={(d) => {
             setHeaderDate(d)

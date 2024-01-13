@@ -15,27 +15,27 @@ describe('DaySelector', () => {
   })
 
   test('should apply correct className for selected date', () => {
-    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00').toDate()} />)
+    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00')} />)
     expect(container.getElementsByClassName('rc-day-selector-cell-selected').length).toBe(1)
   })
 
   test('should apply correct className for all 6 rows', () => {
-    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00').toDate()} />)
+    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00')} />)
     expect(container.getElementsByClassName('rc-day-selector-cell-row').length).toBe(6)
   })
 
   test('should apply correct className for all total cells', () => {
-    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00').toDate()} />)
+    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00')} />)
     expect(container.getElementsByClassName('rc-day-selector-cell').length).toBe(42)
   })
 
   test('should apply correct className for all current dates', () => {
-    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00').toDate()} />)
+    const { container } = render(<DaySelector date={dayjs('2002-12-10T00:00:00')} />)
     expect(container.getElementsByClassName('rc-day-selector-cell-current').length).toBe(31)
   })
 
   test('should render correct selected date', () => {
-    const { container } = render(<DaySelector date={dayjs('2002-12-11T00:00:00').toDate()} />)
+    const { container } = render(<DaySelector date={dayjs('2002-12-11T00:00:00')} />)
     expect(container.getElementsByClassName('rc-day-selector-cell-selected')[0].textContent).toBe('11')
   })
 
@@ -46,7 +46,7 @@ describe('DaySelector', () => {
   })
 
   test('should call onSelect with the correct date when date cell is clicked', async () => {
-    const date = dayjs('2002-12-20T00:00:00').toDate()
+    const date = dayjs('2002-12-20T00:00:00')
     const onSelect = jest.fn()
     const { container } = render(<DaySelector onSelect={onSelect} date={date} />)
     const cell = container.getElementsByClassName('rc-day-selector-cell-selected')[0]
@@ -59,8 +59,8 @@ describe('DaySelector', () => {
   })
 
   test('should call onSelect with first date in the month', async () => {
-    const date = dayjs('2002-12-20T00:00:00').toDate()
-    const firstDateInMonth = dayjs('2002-12-01T00:00:00').toDate()
+    const date = dayjs('2002-12-20T00:00:00')
+    const firstDateInMonth = dayjs('2002-12-01T00:00:00')
 
     const onSelect = jest.fn()
 
@@ -75,8 +75,8 @@ describe('DaySelector', () => {
   })
 
   test('should call onSelect with last date in the month', async () => {
-    const date = dayjs('2002-12-20T00:00:00').toDate()
-    const lastDateInMonth = dayjs('2002-12-31T00:00:00').toDate()
+    const date = dayjs('2002-12-20T00:00:00')
+    const lastDateInMonth = dayjs('2002-12-31T00:00:00')
 
     const onSelect = jest.fn()
 
@@ -92,8 +92,8 @@ describe('DaySelector', () => {
   })
 
   test('should call onSelect with first date in the calendar', async () => {
-    const date = dayjs('2002-11-02T00:00:00').toDate()
-    const firstDateInMonth = dayjs('2002-10-27T00:00:00').toDate()
+    const date = dayjs('2002-11-02T00:00:00')
+    const firstDateInMonth = dayjs('2002-10-27T00:00:00')
 
     const onSelect = jest.fn()
 
@@ -108,8 +108,8 @@ describe('DaySelector', () => {
   })
 
   test('should call onSelect with last date in the calendar', async () => {
-    const date = dayjs('2002-12-20T00:00:00').toDate()
-    const lastDateInCalendar = dayjs('2003-01-11T00:00:00').toDate()
+    const date = dayjs('2002-12-20T00:00:00')
+    const lastDateInCalendar = dayjs('2003-01-11T00:00:00')
 
     const onSelect = jest.fn()
 

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import ChevronLeftIcon from '../../icons/ChevronLeftIcon'
 import ChevronRightIcon from '../../icons/ChevronRightIcon'
 import { addMonth, getMonth, getMonthsShort, getTodayDate, getYear } from '../../utils/dayjsUtil'
-import dayjs from 'dayjs'
+import { Dayjs } from 'dayjs'
 import { isEqualDate } from '../../utils/dates'
 
 interface Props {
-  date?: Date
-  onSelect?: (date: Date) => void
+  date?: Dayjs
+  onSelect?: (date: Dayjs) => void
   onClickMonth?: (month: number) => void
   onClickYear?: (year: number) => void
 }
@@ -16,7 +16,7 @@ function HeaderSelector({ date, onSelect, onClickMonth, onClickYear }: Props) {
   const today = getTodayDate()
   const shortMonths = getMonthsShort()
 
-  const initialDate = date ? dayjs(date) : today
+  const initialDate = date ?? today
 
   const [selectedDate, setSelectedDate] = useState(initialDate)
 
@@ -30,13 +30,13 @@ function HeaderSelector({ date, onSelect, onClickMonth, onClickYear }: Props) {
   const handleOnNextMonth = () => {
     const date = addMonth(selectedDate, 1)
     setSelectedDate(date)
-    onSelect?.(dayjs(date).toDate())
+    onSelect?.(date)
   }
 
   const handleOnPrevMonth = () => {
     const date = addMonth(selectedDate, -1)
     setSelectedDate(date)
-    onSelect?.(dayjs(date).toDate())
+    onSelect?.(date)
   }
 
   return (

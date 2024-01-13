@@ -20,3 +20,6 @@ export const isEqualDate = (calendarDate: Dayjs, selectedDate: Dayjs) => {
     getDate(calendarDate) === getDate(selectedDate)
   )
 }
+
+export const isEqualMonth = (calendarDate: Dayjs, selectedDate: Dayjs) =>
+  getMonth(calendarDate) === getMonth(selectedDate)

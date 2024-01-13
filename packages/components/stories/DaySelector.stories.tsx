@@ -3,32 +3,29 @@ import DaySelector from '../src/selectors/DaySelector/DaySelector'
 
 import './styles.css'
 import { WithDaySelector } from './HeaderSelector.stories'
+import dayjs from 'dayjs'
 
 export default {
   title: 'Example/DaySelector',
   component: DaySelector,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 }
 
 export const Default = () => {
-  const today = new Date().setHours(0, 0, 0, 0)
-  const [date, setDate] = useState(new Date(today))
+  const [date, setDate] = useState(dayjs())
 
   return (
     <>
       <p>
-        <span className='selected-date-text-demo'>Selected date: {date.toLocaleDateString()}</span>
+        <span className='demo-date-text'>Date: {date.format('MM/DD/YYYY')}</span>
       </p>
-      <div className='day-selector-demo'>
+      <div className='demo-selector-container'>
         <DaySelector
           date={date}
           onSelect={(date) => {
