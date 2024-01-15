@@ -4,15 +4,19 @@ import useClassNames from '../../hooks/useClassNames'
 import { addMonth, getMonth, getMonthsShort } from '../../utils/dayjsUtil'
 import { Dayjs } from 'dayjs'
 
+const NUMBER_OF_COLUMNS = 3
+const NUMBER_OF_ROWS = 4
+
 interface Props {
   classNamePrefix?: string
   /** Initial date - default is today's date */
-  date?: Dayjs
+  date: Dayjs
+  selectedDate: Dayjs
   /** Callback function when a date is selected */
   onSelect?: (date: Dayjs) => void
 }
 
-function MonthSelector({ classNamePrefix = 'rc-month-selector', date, onSelect }: Props) {
+function MonthSelector({ classNamePrefix = 'rc-month-selector', date, selectedDate, onSelect }: Props) {
   const { getMonthCellClassNames } = useClassNames()
 
   const months = getMonthsShort()
@@ -22,9 +26,10 @@ function MonthSelector({ classNamePrefix = 'rc-month-selector', date, onSelect }
     <CellsMatrix
       classNamePrefix={classNamePrefix}
       date={date}
+      selectedDate={selectedDate}
       onSelect={onSelect}
-      numberOfColumns={3}
-      numberOfRows={4}
+      numberOfColumns={NUMBER_OF_COLUMNS}
+      numberOfRows={NUMBER_OF_ROWS}
       cellDate={addMonth}
       cellValue={getMonthValue}
       cellClassNames={getMonthCellClassNames}

@@ -28,6 +28,14 @@
     -webkit-box-align: center;
     background-color: transparent;
 
+    &.active {
+      background-color: $gray-light;
+
+      &:hover {
+        background-color: $gray-100;
+      }
+    }
+
     &:hover {
       background-color: $gray-light;
     }

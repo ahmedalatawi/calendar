@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 
 interface Props {
-  classNamePrefix?: string
+  classNamePrefix: string
   children: ReactNode
 }
 

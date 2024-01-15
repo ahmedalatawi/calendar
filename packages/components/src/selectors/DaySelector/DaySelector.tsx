@@ -1,9 +1,11 @@
 import React, { memo } from 'react'
-import { NUMBER_OF_DAY_ROWS, NUMBER_OF_WEEKDAYS } from '../../constants'
 import { addDay, getDate, getWeekdaysShort } from '../../utils/dayjsUtil'
 import type { Dayjs } from 'dayjs'
 import useClassNames from '../../hooks/useClassNames'
 import CellsMatrix from '../CellsMatrix/CellsMatrix'
+
+const NUMBER_OF_COLUMNS = 7
+const NUMBER_OF_ROWS = 6
 
 interface HeaderProps {
   classNamePrefix?: string
@@ -11,23 +13,26 @@ interface HeaderProps {
 
 interface Props {
   classNamePrefix?: string
-  /** Initial date - default is today's date */
-  date?: Dayjs
+  /** Initial date */
+  date: Dayjs
+  /** Selected date */
+  selectedDate: Dayjs
   /** Callback function when a date is selected */
   onSelect?: (date: Dayjs) => void
 }
 
-function DaySelector({ classNamePrefix = 'rc-day-selector', date, onSelect }: Props) {
+function DaySelector({ classNamePrefix = 'rc-day-selector', date, selectedDate, onSelect }: Props) {
   const { getDayCellClassNames } = useClassNames()
 
   return (
     <CellsMatrix
       classNamePrefix={classNamePrefix}
       date={date}
+      selectedDate={selectedDate}
       onSelect={onSelect}
       header={<Header classNamePrefix={classNamePrefix} />}
-      numberOfColumns={NUMBER_OF_WEEKDAYS}
-      numberOfRows={NUMBER_OF_DAY_ROWS}
+      numberOfColumns={NUMBER_OF_COLUMNS}
+      numberOfRows={NUMBER_OF_ROWS}
       cellDate={addDay}
       cellValue={getDate}
       cellClassNames={getDayCellClassNames}

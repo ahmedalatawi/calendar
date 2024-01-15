@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import HeaderSelector from '../src/selectors/HeaderSelector/HeaderSelector'
 import DaySelector from '../src/selectors/DaySelector/DaySelector'
+import dayjs, { Dayjs } from 'dayjs'
+import MonthSelector from '../src/selectors/MonthSelector/MonthSelector'
 
 import './styles.css'
-import dayjs from 'dayjs'
 
 export default {
   title: 'Example/HeaderSelector',
@@ -15,6 +16,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+}
+
+type View = {
+  month: boolean
+  year: boolean
 }
 
 export const Default = () => {
@@ -42,6 +48,38 @@ export const WithDaySelector = () => {
 
   const [headerDate, setHeaderDate] = useState(today)
   const [date, setDate] = useState(today)
+  const [view, setView] = useState<View>({
+    month: false,
+    year: false,
+  })
+  const [resetHeaderActive, setResetHeaderActive] = useState(false)
+
+  const handleClickMonth = (month: number) => {
+    console.log('month: ', month)
+    setResetHeaderActive(false)
+    setView((v) => ({ ...v, month: !v.month, year: false }))
+  }
+
+  const handleClickYear = (year: number) => {
+    console.log('year: ', year)
+    setResetHeaderActive(false)
+    setView((v) => ({ ...v, year: !v.year, month: false }))
+  }
+
+  const handleSelectMonth = (date: Dayjs) => {
+    setHeaderDate(date)
+    setResetHeaderActive(true)
+    setView({ month: false, year: false })
+  }
+
+  const handleSelectYear = () => {
+    setResetHeaderActive(true)
+    setView({ month: false, year: false })
+  }
+
+  const handleSelectNextPrevMonth = (date: Dayjs) => {
+    setHeaderDate(date)
+  }
 
   return (
     <>
@@ -49,14 +87,29 @@ export const WithDaySelector = () => {
         <span className='demo-date-text'>Date: {date.format('MM/DD/YYYY')}</span>
       </p>
       <div className='demo-selector-container'>
-        <HeaderSelector date={headerDate} onSelect={setHeaderDate} />
-        <DaySelector
+        <HeaderSelector
           date={headerDate}
-          onSelect={(d) => {
-            setHeaderDate(d)
-            setDate(d)
-          }}
+          resetActive={resetHeaderActive}
+          onSelect={handleSelectNextPrevMonth}
+          onClickMonth={handleClickMonth}
+          onClickYear={handleClickYear}
         />
+        {!view.month && !view.year && (
+          <DaySelector
+            date={headerDate}
+            selectedDate={date}
+            onSelect={(d) => {
+              setHeaderDate(d)
+              setDate(d)
+            }}
+          />
+        )}
+        {view.month && <MonthSelector date={headerDate} selectedDate={date} onSelect={handleSelectMonth} />}
+        {view.year && (
+          <div>
+            <button onClick={() => handleSelectYear()}>Year view</button>
+          </div>
+        )}
       </div>
     </>
   )

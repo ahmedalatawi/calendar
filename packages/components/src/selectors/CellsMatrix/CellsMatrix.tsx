@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React, { ReactNode } from 'react'
 import { getCalendarStartDate } from '../../utils/dates'
 import { getTodayDate } from '../../utils/dayjsUtil'
 import type { Dayjs } from 'dayjs'
@@ -7,7 +7,8 @@ import CellRows from './CellRows'
 
 interface Props {
   classNamePrefix: string
-  date?: Dayjs
+  date: Dayjs
+  selectedDate: Dayjs
   numberOfColumns: number
   numberOfRows: number
   header?: ReactNode
@@ -16,8 +17,8 @@ interface Props {
   cellValue: (date: Dayjs) => number | string
   cellClassNames: (
     className: string,
-    currentDate: Dayjs,
     date: Dayjs,
+    calendarDate: Dayjs,
     selectedDate: Dayjs,
     today: Dayjs,
   ) => { [key: string]: boolean }
@@ -26,6 +27,7 @@ interface Props {
 function CellsMatrix({
   classNamePrefix,
   date,
+  selectedDate,
   header,
   numberOfColumns,
   numberOfRows,
@@ -35,16 +37,10 @@ function CellsMatrix({
   cellClassNames,
 }: Props) {
   const today = getTodayDate()
-  const currentDate = date ?? today
-
-  const [selectedDate, setSelectedDate] = useState(currentDate)
-
-  const calendarStartDate = getCalendarStartDate(currentDate)
-
+  const calendarStartDate = getCalendarStartDate(date)
   const className = `${classNamePrefix}-cell`
 
   const handleSelectDate = (date: Dayjs) => {
-    setSelectedDate(date)
     onSelect?.(date)
   }
 
@@ -54,18 +50,18 @@ function CellsMatrix({
       {Array.from({ length: numberOfRows }).map((_, row) => (
         <CellRows key={row} classNamePrefix={classNamePrefix}>
           {Array.from({ length: numberOfColumns }).map((_, weekday) => {
-            const date = cellDate(calendarStartDate, row * numberOfColumns + weekday)
-            const value = cellValue(date)
+            const calendarDate = cellDate(calendarStartDate, row * numberOfColumns + weekday)
+            const calendarDay = cellValue(calendarDate)
 
             return (
               <span
                 key={weekday}
                 className={classNames(className, {
-                  ...cellClassNames(className, currentDate, date, selectedDate, today),
+                  ...cellClassNames(className, date, calendarDate, selectedDate, today),
                 })}
-                onClick={() => handleSelectDate(date)}
+                onClick={() => handleSelectDate(calendarDate)}
               >
-                {value}
+                {calendarDay}
               </span>
             )
           })}

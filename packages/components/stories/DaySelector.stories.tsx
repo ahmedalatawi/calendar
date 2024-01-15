@@ -28,6 +28,7 @@ export const Default = () => {
       <div className='demo-selector-container'>
         <DaySelector
           date={date}
+          selectedDate={date}
           onSelect={(date) => {
             setDate(date)
           }}

@@ -28,6 +28,7 @@ export const Default = () => {
       <div className='demo-selector-container'>
         <MonthSelector
           date={date}
+          selectedDate={date}
           onSelect={(date) => {
             setDate(date)
           }}
@@ -37,11 +38,16 @@ export const Default = () => {
   )
 }
 
-export const WithDaySelector = () => {
+export const WithHeaderSelector = () => {
   const today = dayjs()
 
   const [headerDate, setHeaderDate] = useState(today)
   const [date, setDate] = useState(today)
+
+  function handleSelectMonth(month: number) {
+    const date = headerDate.month(month)
+    console.log('date: ', date)
+  }
 
   return (
     <>
@@ -49,9 +55,10 @@ export const WithDaySelector = () => {
         <span className='demo-date-text'>Date: {date.format('MM/DD/YYYY')}</span>
       </p>
       <div className='demo-selector-container'>
-        <HeaderSelector date={headerDate} onSelect={setHeaderDate} />
+        <HeaderSelector date={headerDate} onSelect={setHeaderDate} onClickMonth={handleSelectMonth} />
         <MonthSelector
           date={headerDate}
+          selectedDate={date}
           onSelect={(d) => {
             setHeaderDate(d)
             setDate(d)
