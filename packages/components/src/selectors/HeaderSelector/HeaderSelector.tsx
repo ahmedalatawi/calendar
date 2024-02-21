@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ChevronLeftIcon from '../../icons/ChevronLeftIcon'
 import ChevronRightIcon from '../../icons/ChevronRightIcon'
-import { addMonth, getMonth, getMonthsShort, getTodayDate, getYear } from '../../utils/dayjsUtil'
+import { addMonth, addYear, getMonth, getMonthsShort, getTodayDate, getYear } from '../../utils/dayjsUtil'
 import { Dayjs } from 'dayjs'
 import { isEqualDate } from '../../utils/dates'
 import classNames from 'classnames'
@@ -40,14 +40,14 @@ function HeaderSelector({ date, resetActive, onSelect, onClickMonth, onClickYear
     }
   }, [resetActive])
 
-  const handleOnNextMonth = () => {
-    const date = addMonth(selectedDate, 1)
+  const handleChangeMonth = (months: number) => {
+    const date = addMonth(selectedDate, months)
     setSelectedDate(date)
     onSelect?.(date)
   }
 
-  const handleOnPrevMonth = () => {
-    const date = addMonth(selectedDate, -1)
+  const handleChangeYear = (years: number) => {
+    const date = addYear(selectedDate, years)
     setSelectedDate(date)
     onSelect?.(date)
   }
@@ -64,12 +64,28 @@ function HeaderSelector({ date, resetActive, onSelect, onClickMonth, onClickYear
     setActiveMonth(false)
   }
 
+  const handleOnPrev = () => {
+    if (activeYear) {
+      handleChangeYear(-1)
+    } else {
+      handleChangeMonth(-1)
+    }
+  }
+
+  const handleOnNext = () => {
+    if (activeYear) {
+      handleChangeYear(1)
+    } else {
+      handleChangeMonth(1)
+    }
+  }
+
   const LeftIcon = activeYear ? ChevronLeftDoubleIcon : ChevronLeftIcon
   const RightIcon = activeYear ? ChevronRightDoubleIcon : ChevronRightIcon
 
   return (
     <div className='rc-header-selector'>
-      <LeftIcon onClick={() => handleOnPrevMonth()} />
+      <LeftIcon onClick={() => handleOnPrev()} />
       <div className='rc-header-selector-container'>
         <span
           className={classNames('rc-header-selector-title', { active: activeMonth })}
@@ -84,7 +100,7 @@ function HeaderSelector({ date, resetActive, onSelect, onClickMonth, onClickYear
           {year}
         </span>
       </div>
-      <RightIcon onClick={() => handleOnNextMonth()} />
+      <RightIcon onClick={() => handleOnNext()} />
     </div>
   )
 }
