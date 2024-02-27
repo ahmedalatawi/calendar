@@ -1,5 +1,5 @@
 import { Dayjs } from 'dayjs'
-import { isEqualDate, isEqualMonthAndYear, isWithinCurrentMonth } from '../utils/dates'
+import { isEqualDate, isEqualMonthAndYear, isEqualYear, isWithinCurrentMonth } from '../utils/dates'
 
 const useClassNames = () => {
   return {
@@ -14,6 +14,12 @@ const useClassNames = () => {
       return {
         [`${className}-current-month`]: isEqualMonthAndYear(calendarDate, today),
         [`${className}-selected`]: isEqualMonthAndYear(calendarDate, selectedDate),
+      }
+    },
+    getYearCellClassNames: (className: string, _: Dayjs, calendarDate: Dayjs, selectedDate: Dayjs, today: Dayjs) => {
+      return {
+        [`${className}-current-year`]: isEqualYear(calendarDate, today),
+        [`${className}-selected`]: isEqualYear(calendarDate, selectedDate),
       }
     },
   }

@@ -26,3 +26,5 @@ export const isEqualMonth = (calendarDate: Dayjs, selectedDate: Dayjs) =>
 
 export const isEqualMonthAndYear = (calendarDate: Dayjs, selectedDate: Dayjs) =>
   isEqualMonth(calendarDate, selectedDate) && getYear(calendarDate) === getYear(selectedDate)
+
+export const isEqualYear = (calendarDate: Dayjs, selectedDate: Dayjs) => getYear(calendarDate) === getYear(selectedDate)

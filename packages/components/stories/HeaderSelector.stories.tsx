@@ -5,6 +5,7 @@ import dayjs, { Dayjs } from 'dayjs'
 import MonthSelector from '../src/selectors/MonthSelector/MonthSelector'
 
 import './styles.css'
+import YearSelector from '../src/selectors/YearSelector/YearSelector'
 
 export default {
   title: 'Example/HeaderSelector',
@@ -72,7 +73,8 @@ export const WithDaySelector = () => {
     setView({ month: false, year: false })
   }
 
-  const handleSelectYear = () => {
+  const handleSelectYear = (date: Dayjs) => {
+    setHeaderDate(date)
     setResetHeaderActive(true)
     setView({ month: false, year: false })
   }
@@ -105,11 +107,7 @@ export const WithDaySelector = () => {
           />
         )}
         {view.month && <MonthSelector date={headerDate} selectedDate={date} onSelect={handleSelectMonth} />}
-        {view.year && (
-          <div>
-            <button onClick={() => handleSelectYear()}>Year view</button>
-          </div>
-        )}
+        {view.year && <YearSelector date={headerDate} selectedDate={date} onSelect={handleSelectYear} />}
       </div>
     </>
   )
