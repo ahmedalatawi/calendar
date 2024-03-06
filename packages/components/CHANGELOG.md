@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.45](https://github.com/ahmedalatawi/calendar/compare/@reactcalendar/components@1.0.44...@reactcalendar/components@1.0.45) (2024-03-06)
+
+**Note:** Version bump only for package @reactcalendar/components
+
+
+
+
+
 ## [1.0.44](https://github.com/ahmedalatawi/calendar/compare/@reactcalendar/components@1.0.43...@reactcalendar/components@1.0.44) (2024-03-04)
 
 **Note:** Version bump only for package @reactcalendar/components
