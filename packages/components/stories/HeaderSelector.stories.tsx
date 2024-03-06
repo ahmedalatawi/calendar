@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import HeaderSelector from '../src/selectors/HeaderSelector/HeaderSelector'
 import DaySelector from '../src/selectors/DaySelector/DaySelector'
-import dayjs, { Dayjs } from 'dayjs'
 import MonthSelector from '../src/selectors/MonthSelector/MonthSelector'
+import YearSelector from '../src/selectors/YearSelector/YearSelector'
+import dayjs, { Dayjs } from 'dayjs'
 
 import './styles.css'
-import YearSelector from '../src/selectors/YearSelector/YearSelector'
 
 export default {
   title: 'Example/HeaderSelector',
