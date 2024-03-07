@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - 'packages/components/**'
+      - 'packages/datepicker/**'
   workflow_dispatch:
 
 # List of jobs
