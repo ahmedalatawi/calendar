@@ -1,5 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
-import 'dayjs/locale/es'
+// import 'dayjs/locale/es'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 import weekday from 'dayjs/plugin/weekday'
 import localeData from 'dayjs/plugin/localeData'

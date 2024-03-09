@@ -3272,7 +3272,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactcalendar/components@workspace:packages/components":
+"@reactcalendar/components@^1.0.45, @reactcalendar/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@reactcalendar/components@workspace:packages/components"
   dependencies:
@@ -3333,6 +3333,7 @@ __metadata:
   resolution: "@reactcalendar/datepicker@workspace:packages/datepicker"
   dependencies:
     "@babel/core": ^7.23.5
+    "@reactcalendar/components": ^1.0.45
     "@rollup/plugin-commonjs": ^25.0.7
     "@rollup/plugin-node-resolve": ^15.2.3
     "@rollup/plugin-terser": ^0.4.4

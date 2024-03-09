@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import DatePicker from '../src/picker/DatePicker'
-import dayjs from 'dayjs'
 
 export default {
   title: 'Example/DatePicker',
@@ -14,8 +13,4 @@ export default {
   },
 }
 
-export const Default = () => {
-  const [date, setDate] = useState(dayjs())
-
-  return <div>datepicker</div>
-}
+export const Default = () => <DatePicker />
