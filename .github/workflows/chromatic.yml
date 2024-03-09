@@ -24,10 +24,12 @@ jobs:
       - name: Install dependencies
         run: yarn
         # 👇 Adds Chromatic as a step in the workflow
-      - name: Publish to Chromatic
+      - name: Publish to Chromatic for components
         run: |
           cd packages/components
           yarn chromatic
+      - name: Publish to Chromatic for datepicker
+        run: |
           cd packages/datepicker
           yarn chromatic
         env:
