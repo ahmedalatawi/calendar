@@ -28,5 +28,7 @@ jobs:
         run: |
           cd packages/components
           yarn chromatic
+          cd packages/datepicker
+          yarn chromatic
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
