@@ -1,4 +1,4 @@
-// import index.scss
+// import styling
 import './styles/index.scss'
 
 import DaySelector from './selectors/DaySelector/DaySelector'

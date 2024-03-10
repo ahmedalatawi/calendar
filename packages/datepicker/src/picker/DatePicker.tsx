@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import dayjs, { Dayjs } from 'dayjs'
-import { HeaderSelector, DaySelector, MonthSelector, YearSelector } from '@reactcalendar/components'
+// import { HeaderSelector, DaySelector, MonthSelector, YearSelector } from '@reactcalendar/components'
 
-import '@reactcalendar/components/dist/index.css'
+// import '@reactcalendar/components/dist/index.css'
 
 type View = {
   month: boolean
@@ -54,7 +54,7 @@ function DatePicker() {
         <span className='demo-date-text'>Date: {date.format('MM/DD/YYYY')}</span>
       </p>
       <div className='demo-selector-container'>
-        <HeaderSelector
+        {/* <HeaderSelector
           date={headerDate}
           resetActive={resetHeaderActive}
           onSelect={handleSelectNextPrevMonth}
@@ -72,7 +72,7 @@ function DatePicker() {
           />
         )}
         {view.month && <MonthSelector date={headerDate} selectedDate={date} onSelect={handleSelectMonth} />}
-        {view.year && <YearSelector date={headerDate} selectedDate={date} onSelect={handleSelectYear} />}
+        {view.year && <YearSelector date={headerDate} selectedDate={date} onSelect={handleSelectYear} />} */}
       </div>
     </>
   )
