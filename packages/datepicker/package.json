@@ -1,6 +1,6 @@
 {
   "name": "@reactcalendar/datepicker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React datepicker component",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -83,7 +83,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@reactcalendar/components": "^1.0.45"
+    "@reactcalendar/components": "^1.0.46"
   },
   "peerDependencies": {
     "react": "^18.2.0",
