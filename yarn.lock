@@ -3315,13 +3315,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactcalendar/components@npm:^1.0.46":
-  version: 1.0.46
-  resolution: "@reactcalendar/components@npm:1.0.46"
+"@reactcalendar/components@npm:^1.0.47":
+  version: 1.0.47
+  resolution: "@reactcalendar/components@npm:1.0.47"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: bd9cbbe17b5dcf706be9ff4006b109998cfb19435bd08393d549cb180f27e52eaf0444df51ab3fa4af68cb43dafc63c4e67a720489cd791a204844d5af82510b
+  checksum: 39ac247d86be3a5ff531d4940efbb39606379d62e03569c598017a8677a2cceb4071b880cd4cce4771365431cf341fa3552033c5ecabd474a65116da74e8cd5a
   languageName: node
   linkType: hard
 
@@ -3386,7 +3386,7 @@ __metadata:
   resolution: "@reactcalendar/datepicker@workspace:packages/datepicker"
   dependencies:
     "@babel/core": ^7.23.5
-    "@reactcalendar/components": ^1.0.46
+    "@reactcalendar/components": ^1.0.47
     "@rollup/plugin-commonjs": ^25.0.7
     "@rollup/plugin-node-resolve": ^15.2.3
     "@rollup/plugin-terser": ^0.4.4
