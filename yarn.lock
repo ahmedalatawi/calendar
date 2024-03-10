@@ -3315,7 +3315,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactcalendar/components@1.0.45, @reactcalendar/components@^1.0.45, @reactcalendar/components@workspace:packages/components":
+"@reactcalendar/components@npm:^1.0.45":
+  version: 1.0.45
+  resolution: "@reactcalendar/components@npm:1.0.45"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 4e3b64227fdb2c17f5a0fcceaf5c2f55a5b8c5ac3a0e81c4549e7cd553c9d6177774b7b0ba9cc9e6a4ddad18a25baad3920a91071c76cf40f6aed5bd7c84b176
+  languageName: node
+  linkType: hard
+
+"@reactcalendar/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@reactcalendar/components@workspace:packages/components"
   dependencies:
@@ -3366,8 +3376,8 @@ __metadata:
     ts-jest: ^29.1.1
     typescript: ^5.3.3
   peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
+    react: ^18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -3422,9 +3432,8 @@ __metadata:
     ts-jest: ^29.1.1
     typescript: ^5.3.3
   peerDependencies:
-    "@reactcalendar/components": "*"
-    react: "*"
-    react-dom: "*"
+    react: ^18.2.0
+    react-dom: ^18.2.0
   languageName: unknown
   linkType: soft
 
@@ -10063,11 +10072,11 @@ __metadata:
   linkType: hard
 
 "hasown@npm:^2.0.0, hasown@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "hasown@npm:2.0.1"
+  version: 2.0.2
+  resolution: "hasown@npm:2.0.2"
   dependencies:
     function-bind: ^1.1.2
-  checksum: 9081c382a4fe8a62639a8da5c7d3322b203c319147e48783763dd741863d9f2dcaa743574fe2a1283871c445d8ba99ea45d5fff384e5ad27ca9dd7a367d79de0
+  checksum: e8516f776a15149ca6c6ed2ae3110c417a00b62260e222590e54aa367cbcd6ed99122020b37b7fbdf05748df57b265e70095d7bf35a47660587619b15ffb93db
   languageName: node
   linkType: hard
 
@@ -14654,7 +14663,6 @@ __metadata:
   resolution: "reactcalendar@workspace:."
   dependencies:
     "@pedalboard/scripts": ^0.2.0
-    "@reactcalendar/components": 1.0.45
     "@swc/core": ^1.3.100
     "@swc/jest": ^0.2.29
     lerna: ^8.0.0

@@ -37,7 +37,6 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.23.5",
-    "@reactcalendar/components": "^1.0.45",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
@@ -83,9 +82,11 @@
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.3"
   },
+  "dependencies": {
+    "@reactcalendar/components": "^1.0.45"
+  },
   "peerDependencies": {
-    "@reactcalendar/components": "*",
-    "react": "*",
-    "react-dom": "*"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
