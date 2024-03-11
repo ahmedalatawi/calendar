@@ -1,12 +1,5 @@
 import React from 'react'
-import DatePicker from '../src/picker/DatePicker'
-
-import dayjs from 'dayjs'
-import weekday from 'dayjs/plugin/weekday'
-import localeData from 'dayjs/plugin/localeData'
-
-dayjs.extend(weekday)
-dayjs.extend(localeData)
+import { DatePicker } from '../src'
 
 export default {
   title: 'Example/DatePicker',

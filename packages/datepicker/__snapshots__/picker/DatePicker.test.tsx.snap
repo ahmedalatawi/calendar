@@ -10,7 +10,7 @@ exports[`DatePicker render the component 1`] = `
           class="rc-date-picker-text"
         >
           Date: 
-          03/10/2024
+          03/11/2024
         </span>
       </p>
       <div
@@ -186,12 +186,12 @@ exports[`DatePicker render the component 1`] = `
             class="rc-day-selector-cell-row"
           >
             <span
-              class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
+              class="rc-day-selector-cell rc-day-selector-cell-current"
             >
               10
             </span>
             <span
-              class="rc-day-selector-cell rc-day-selector-cell-current"
+              class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
             >
               11
             </span>
@@ -348,7 +348,7 @@ exports[`DatePicker render the component 1`] = `
         class="rc-date-picker-text"
       >
         Date: 
-        03/10/2024
+        03/11/2024
       </span>
     </p>
     <div
@@ -524,12 +524,12 @@ exports[`DatePicker render the component 1`] = `
           class="rc-day-selector-cell-row"
         >
           <span
-            class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
+            class="rc-day-selector-cell rc-day-selector-cell-current"
           >
             10
           </span>
           <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
+            class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
           >
             11
           </span>
