@@ -3315,13 +3315,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reactcalendar/components@npm:^1.0.47":
-  version: 1.0.47
-  resolution: "@reactcalendar/components@npm:1.0.47"
+"@reactcalendar/components@npm:^1.0.48":
+  version: 1.0.48
+  resolution: "@reactcalendar/components@npm:1.0.48"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 39ac247d86be3a5ff531d4940efbb39606379d62e03569c598017a8677a2cceb4071b880cd4cce4771365431cf341fa3552033c5ecabd474a65116da74e8cd5a
+  checksum: 4507e3f9901710be94db1419ecb9d2b98c51898254bad79fe3cb4d90398bc3bd386e7854828f21a634aee1f7bc8f7e0886f9648336ba6403f7b63147fa06bb53
   languageName: node
   linkType: hard
 
@@ -3386,7 +3386,7 @@ __metadata:
   resolution: "@reactcalendar/datepicker@workspace:packages/datepicker"
   dependencies:
     "@babel/core": ^7.23.5
-    "@reactcalendar/components": ^1.0.47
+    "@reactcalendar/components": ^1.0.48
     "@rollup/plugin-commonjs": ^25.0.7
     "@rollup/plugin-node-resolve": ^15.2.3
     "@rollup/plugin-terser": ^0.4.4
@@ -6402,7 +6402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"available-typed-arrays@npm:^1.0.6, available-typed-arrays@npm:^1.0.7":
+"available-typed-arrays@npm:^1.0.7":
   version: 1.0.7
   resolution: "available-typed-arrays@npm:1.0.7"
   dependencies:
@@ -6913,9 +6913,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001587":
-  version: 1.0.30001596
-  resolution: "caniuse-lite@npm:1.0.30001596"
-  checksum: 699b61ceba91a5f2830a49385b282707c4292b61799664d8d2f7893e1f89aef6597b4d547f1ce49ec2f5b2752f467fcf7b1a02ca56fb7dc103e423afcb808fd6
+  version: 1.0.30001597
+  resolution: "caniuse-lite@npm:1.0.30001597"
+  checksum: ec6a2cf0fd49f37d16732e6595939fc80a125dcd188a950bc936c61b4ad53becc0fe51bf2d9a625415de7b1cb23bd835f220e8b68d8ab951a940edeea65476fd
   languageName: node
   linkType: hard
 
@@ -10045,7 +10045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"has-tostringtag@npm:^1.0.0, has-tostringtag@npm:^1.0.1, has-tostringtag@npm:^1.0.2":
+"has-tostringtag@npm:^1.0.0, has-tostringtag@npm:^1.0.2":
   version: 1.0.2
   resolution: "has-tostringtag@npm:1.0.2"
   dependencies:
@@ -17272,15 +17272,15 @@ __metadata:
   linkType: hard
 
 "which-typed-array@npm:^1.1.13, which-typed-array@npm:^1.1.14, which-typed-array@npm:^1.1.2, which-typed-array@npm:^1.1.9":
-  version: 1.1.14
-  resolution: "which-typed-array@npm:1.1.14"
+  version: 1.1.15
+  resolution: "which-typed-array@npm:1.1.15"
   dependencies:
-    available-typed-arrays: ^1.0.6
-    call-bind: ^1.0.5
+    available-typed-arrays: ^1.0.7
+    call-bind: ^1.0.7
     for-each: ^0.3.3
     gopd: ^1.0.1
-    has-tostringtag: ^1.0.1
-  checksum: efe30c143c58630dde8ab96f9330e20165bacd77ca843c602b510120a415415573bcdef3ccbc30a0e5aaf20f257360cfe24712aea0008f149ce5bb99834c0c0b
+    has-tostringtag: ^1.0.2
+  checksum: 65227dcbfadf5677aacc43ec84356d17b5500cb8b8753059bb4397de5cd0c2de681d24e1a7bd575633f976a95f88233abfd6549c2105ef4ebd58af8aa1807c75
   languageName: node
   linkType: hard
 
