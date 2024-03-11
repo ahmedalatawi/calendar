@@ -9,6 +9,7 @@ import { join, dirname } from 'path'
 function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')))
 }
+const path = require('path')
 const config: StorybookConfig = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -27,6 +28,19 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async (config: any) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../'),
+    })
+    // config.module.rules.push({
+    //   test: /\.less$/,
+    //   use: ['style-loader', 'css-loader', 'less-loader'],
+    //   include: path.resolve(__dirname, '../'),
+    // })
+    return config
   },
 }
 export default config

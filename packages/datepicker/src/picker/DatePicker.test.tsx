@@ -4,8 +4,11 @@ import { describe, test, expect, jest } from '@jest/globals'
 import DatePicker from './DatePicker'
 
 describe('DatePicker', () => {
-  test('renders without crashing', () => {
-    render(<DatePicker />)
+  test('render the component', () => {
+    const component = render(<DatePicker />)
+
+    expect(component).toBeTruthy()
+    expect(component).toMatchSnapshot()
   })
 
   //   test('displays the selected date', () => {

@@ -51,9 +51,9 @@ function DatePicker() {
   return (
     <>
       <p>
-        <span className='demo-date-text'>Date: {date.format('MM/DD/YYYY')}</span>
+        <span className='rc-date-picker-text'>Date: {date.format('MM/DD/YYYY')}</span>
       </p>
-      <div className='demo-selector-container'>
+      <div className='rc-date-picker-container'>
         <HeaderSelector
           date={headerDate}
           resetActive={resetHeaderActive}

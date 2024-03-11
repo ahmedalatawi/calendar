@@ -95,7 +95,7 @@ exports[`DaySelector should render the component with default props 1`] = `
             3
           </span>
           <span
-            class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
+            class="rc-day-selector-cell rc-day-selector-cell-current"
           >
             4
           </span>
@@ -129,7 +129,7 @@ exports[`DaySelector should render the component with default props 1`] = `
           class="rc-day-selector-cell-row"
         >
           <span
-            class="rc-day-selector-cell rc-day-selector-cell-current"
+            class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
           >
             10
           </span>
@@ -375,7 +375,7 @@ exports[`DaySelector should render the component with default props 1`] = `
           3
         </span>
         <span
-          class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
+          class="rc-day-selector-cell rc-day-selector-cell-current"
         >
           4
         </span>
@@ -409,7 +409,7 @@ exports[`DaySelector should render the component with default props 1`] = `
         class="rc-day-selector-cell-row"
       >
         <span
-          class="rc-day-selector-cell rc-day-selector-cell-current"
+          class="rc-day-selector-cell rc-day-selector-cell-current rc-day-selector-cell-today rc-day-selector-cell-selected"
         >
           10
         </span>
